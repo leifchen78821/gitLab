@@ -1,0 +1,30 @@
+/*open mySQL*/
+mysql -uroot -p
+
+/*create DB monographic*/
+create database monographic default character set utf8;
+
+/*use DB*/
+use monographic ;
+
+/*create table MemberProfile*/
+CREATE TABLE MemberProfile(
+Name varchar(50) not null prinary key ,
+Password varchar(50) not null,
+PhoneNumber varchar(20) not null,
+Competence int(3)
+);
+
+/*insert 3 new list*/
+INSERT INTO `MemberProfile`(`Name`, `Password`, `PhoneNumber`, `Competence`) VALUES ('LeifChen','123456','0953708399',1);
+INSERT INTO `MemberProfile`(`Name`, `Password`, `PhoneNumber`, `Competence`) VALUES ('saka','123456','(02)1234567',1);
+INSERT INTO `MemberProfile`(`Name`, `Password`, `PhoneNumber`, `Competence`) VALUES ('Bob','123456','1234567',1);
+
+/*show all*/
+SELECT * FROM  `MemberProfile`;
+
+/*update Bob phone number*/
+UPDATE `MemberProfile` SET `PhoneNumber`='(05)9876543' WHERE `Name` = 'Bob';
+
+/*delete bob*/
+DELETE FROM `MemberProfile` WHERE `Name` = 'Bob';
